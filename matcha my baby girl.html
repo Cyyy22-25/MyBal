@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Matcha Love 🍵💚</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #d0e8c6;
+      color: #2d4739;
+      overflow-x: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px 20px;
+      z-index: 1;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.4em;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    .photo {
+      border-radius: 20px;
+      margin-top: 30px;
+      width: 300px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .floating {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .float {
+      position: absolute;
+      animation: float 8s infinite ease-in;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    .love-note {
+      margin-top: 40px;
+    }
+
+    .button {
+      padding: 12px 24px;
+      background-color: #87b469;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background-color: #6d9f58;
+    }
+
+    .keroppi {
+      width: 120px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating hearts and matcha cups -->
+<div class="floating" id="float-container"></div>
+
+<div class="container">
+  <h1>To My Matcha Sweetheart 🍵💚</h1>
+  <p>
+    You are the matcha to my latte, the calm in my chaos, and the sweetness in my every day.
+    Every moment with you feels like a warm cup of green tea—comforting, deep, and filled with love.
+  </p>
+
+  <img src="https://i.imgur.com/oHfVZ7u.jpeg" alt="You and me" class="photo">
+
+  <div class="love-note">
+    <a href="#love-letter" class="button">Read My Love Letter 💌</a>
+  </div>
+
+  <img src="https://i.imgur.com/vYmSaxu.png" alt="Keroppi" class="keroppi">
+</div>
+
+<div id="love-letter" class="container">
+  <h1>💌 Love Letter</h1>
+  <p>
+    My dearest,  
+    <br><br>
+    From the moment we met, your laughter became my favorite melody.  
+    Your love is the most beautiful blend—just like matcha: earthy, vibrant, and healing.  
+    I cherish every moment we share, and I look forward to forever with you.  
+    <br><br>
+    I love you endlessly. 💚
+  </p>
+</div>
+
+<script>
+  const container = document.getElementById('float-container');
+  const emojis = ['❤️', '🍵'];
+
+  for (let i = 0; i < 40; i++) {
+    const item = document.createElement('div');
+    item.className = 'float';
+    item.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+    item.style.left = Math.random() * 100 + 'vw';
+    item.style.animationDelay = (Math.random() * 6) + 's';
+    item.style.fontSize = (Math.random() * 20 + 24) + 'px';
+    container.appendChild(item);
+  }
+</script>
+
+</body>
+</html>
